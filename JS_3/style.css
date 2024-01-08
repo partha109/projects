@@ -1,0 +1,43 @@
+body {
+    margin: 20px;
+    font-family: Arial, sans-serif;
+    background-color: lightblue;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+form {
+    margin-bottom: 20px;
+    display: grid;
+    place-items: center;
+    border: 2px solid #000;
+    padding: 10px;
+}
+
+#apodContent {
+    margin-bottom: 20px;
+}
+
+img {
+    max-width: 80%;
+    height: auto;
+}
+
+#favorites {
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+}
+
+.favorite-item {
+    margin-bottom: 10px;
+}
+
+.favorite-item img {
+    max-width: 50px;
+    height: auto;
+    margin-right: 10px;
+    vertical-align: middle;
+}
