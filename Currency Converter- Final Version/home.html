@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AC Currency Converter</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+
+        <header>
+            <div class="title">
+                <h2>Algonquin College</h2>
+                <img src="images/Logo-DesignTransparentBG.png" id="logo" alt="AC Currency Converter Logo">
+                <h2>Currency Converter</h2>
+            </div>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#news">News</a>
+                <a href="#aboutUs">About Us</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contactUs">Contact Us</a>
+                <button id="menu">
+                </button>
+            </nav>
+        </header>
+
+
+        <div id="container">
+            <section id="home" style="background-image: url(images/1.jpg);">
+                <div class="main-content">
+                    <div class="container">
+                        <form>
+                            <h2>Currency Converter</h2>
+                            <div class="amount">
+                                <p>Amount</p>
+                                <input type="text" value="1">
+                            </div>
+                            <div class="convert-box">
+                                <div class="from">
+                                    <p>From</p>
+                                    <div class="select-input">
+                                        <img src="https://flagcdn.com/48x36/us.png">
+                                        <select></select>
+                                    </div>
+                                </div>
+                                <div class="reverse"><i class="fas fa-exchange-alt"></i></div>
+                                <div class="to">
+                                    <p>To</p>
+                                    <div class="select-input">
+                                        <img src="https://flagcdn.com/48x36/ca.png">
+                                        <select></select>
+                                    </div>
+                                </div>
+                                <div class="result">Getting exchange rate...</div>
+                                <button>Get Exchange Rate</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="card">
+                        <h2>Currency Charts</h2>
+                        <p>By month</p>
+                        <div class="pulse"></div>
+                        <div class="chart-area">
+                            <div class="grid"></div>
+                        </div>
+                    </div>
+
+                    <aside class="news-sidebar">
+                        <h3>Financial News</h3>
+                        <div id="newsFeed"></div>
+                    </aside>
+                </div>
+
+            </section>
+
+            <section id="news" style="background-image: url(images/2.jpg);">
+                <div class="faqh2">
+                    <h2>Business News</h2>
+                </div>
+
+                <div class="news-container">
+                    <ul id="news-list"></ul>
+                </div>
+            </section>
+
+            <section id="aboutUs" style="background-image: url(images/3.jpg);">
+                <div class="aboutus-section">
+                    <div id="aboutus-container">
+                        <div id="aboutus-slider">
+                            <div class="aboutus">
+                                <img src="images/DSC00409.JPG" alt="Person 1" class="aboutus-img">
+                                <p class="aboutus-text">Partha Sinha<br>
+                                    "Partha has years of valuable experience in customer relationship management and
+                                    retail banking, which has honed his skills in building and maintaining strong
+                                    connections with clients. His customer-centric approach ensures that the currency
+                                    conversion business not only meets but exceeds the expectations of its clientele.
+                                    Partha's commitment to excellence and expertise in banking and customer relationship
+                                    management position him as a formidable force in the currency conversion landscape.
+                                    "</p>
+                                <p class="aboutus-author"></p>
+                            </div>
+                            <div class="aboutus">
+                                <img src="images/Ernesto Davila AboutUs.jpeg" alt="Person 2" class="aboutus2-img">
+                                <p class="aboutus-text">Ernesto Davila<br>
+                                    "Ernesto Davila is a mechatronic engineer with a deep understanding of integrated
+                                    engineering systems, which is the foundation of his currency conversion business. He
+                                    also holds a project management degree, showcasing his commitment to effective
+                                    planning and execution. Ernesto's expertise in computer programming enhances the
+                                    technological backbone of his business, ensuring efficiency and precision for his
+                                    clients. "</p>
+                                <p class="aboutus-author"></p>
+                            </div>
+                            <div class="aboutus">
+                                <img src="images/will.jpeg" alt="Person 3" class="aboutus3-img">
+                                <p class="aboutus-text">Zhengyuan Liu（william）<br>
+                                    "William is a dynamic professional who brings a unique blend of project management
+                                    and computer programming skills to the financial landscape. With a degree in project
+                                    management and computer programming, William is well-equipped to navigate the
+                                    complexities of both technology and business, making him an excellent candidate for
+                                    currency conversion services. "</p>
+                                <p class="aboutus-author"></p>
+                            </div>
+                        </div>
+                        <div class="aboutus-arrows">
+                            <span class="arrow left-arrow" onclick="moveSlide(-1)">&#10094;</span>
+                            <span class="arrow right-arrow" onclick="moveSlide(1)">&#10095;</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="faq" style="background-image: url(images/4.jpg);">
+                <div class="faqh2">
+                    <h2>FAQ for AC Currency Converter</h2>
+                </div>
+
+                <div class="faq">
+                    <h3>1. What is Currency Conversion?</h3>
+                    <div class="faq-1">
+                        Currency conversion is the process of converting the value of one currency into another. It
+                        helps users
+                        understand the equivalent value of their money in different currencies.
+                    </div>
+                </div>
+                <div class="faq">
+                    <h3>2. How Does Our Currency Converter Work?</h3>
+                    <div class="faq-2">
+                        Our currency converter uses real-time exchange rates sourced from reputable financial
+                        institutions. The
+                        rates are updated regularly (real-time update) to provide accurate and up-to-date conversions.
+                    </div>
+                </div>
+                <div class="faq">
+                    <h3>3. Is Our Currency Converter Accurate?</h3>
+                    <div class="faq-3">
+                        Yes, our currency converter is designed to provide accurate and reliable conversion rates. We
+                        source our
+                        rates from trusted financial sources and update them regularly.
+                    </div>
+                </div>
+                <div class="faq">
+                    <h3>4. Which Currencies Can I Convert?</h3>
+                    <div class="faq-4">
+                        Our platform supports a wide range of currencies, including major world currencies and some
+                        lesser-known
+                        ones. You can find the full list of supported currencies on our website.
+                    </div>
+                </div>
+                <div class="faq">
+                    <h3>5. Are There Any Fees for Using the Currency Converter? </h3>
+                    <div class="faq-5">
+                        No, using our currency converter is completely free of charge. We do not impose any fees for
+                        accessing
+                        or utilizing our conversion services.
+                    </div>
+                </div>
+                <div class="faq">
+                    <h3>6. Can I Convert Cryptocurrencies?</h3>
+                    <div class="faq-6">
+                        Currently, our platform supports the conversion of traditional fiat currencies. Cryptocurrency
+                        conversion is not available at this time.
+                    </div>
+                </div>
+                <div class="faq">
+                    <h3>7. How Often Are Exchange Rates Updated?</h3>
+                    <div class="faq-7">
+                        Exchange rates on our platform are updated in real-time. We strive to provide the most current
+                        rates to
+                        ensure accurate currency conversions.
+                    </div>
+                </div>
+                <div class="faq">
+                    <h3>8. Is My Personal Information Secure?</h3>
+                    <div class="faq-8">
+                        Yes, we prioritize the security and privacy of our users. Our platform employs robust security
+                        measures
+                        to safeguard personal information.
+                    </div>
+                </div>
+                <div class="faq">
+                    <h3>9. How Can I Embed the Currency Converter on My Website?</h3>
+                    <div class="faq-9">
+                        We provide easy-to-follow instructions on our website for users interested in embedding our
+                        currency
+                        converter on their own sites. Feel free to check our documentation for details.
+                    </div>
+                </div>
+                <div class="faq">
+                    <h3>10. What Are the Different Types of Exchange Rates?</h3>
+                    <div class="faq-10">
+                        Our platform provides spot rates, which represent the current market value of a currency. We do
+                        not
+                        currently offer forward rates.
+                    </div>
+                </div>
+                <div class="faq">
+                    <h3>11. Do You Have a Mobile App?</h3>
+                    <div class="faq-11">
+                        No, right now we do not have a mobile app. However, we are working on to launch our mobile app
+                        and will
+                        be available for both Android and iOS devices as soon as possible. Until then you can use our
+                        website
+                        for the currency conversion information.
+                    </div>
+                </div>
+                <div class="faq">
+                    <h3>12. What Are Cross Currency Rates?</h3>
+                    <div class="faq-12">
+                        Cross currency rates involve the conversion between two currencies without using a common base
+                        currency.
+                        Our platform provides these rates for a comprehensive currency conversion experience.
+                    </div>
+                </div>
+                <div class="faq">
+                    <h3>13. Can I Convert Large Amounts of Currency?</h3>
+                    <div class="faq-13">
+                        There are generally no restrictions on the amount you can convert. However, for very large
+                        transactions,
+                        it's advisable to check for any relevant legal or regulatory considerations.
+                    </div>
+                </div>
+                <h4>If you have any more questions or need assistance with anything related to currency conversion, feel
+                    free to
+                    explore our website or contact us for help.</h4>
+            </section>
+
+            <section id="contactUs" style="background-image: url(images/5.jpg);">
+                <div class="map">
+                    <p>Our office is located at:</p>
+                    <div id="map-container"></div>
+                </div>
+
+                <form id="contactForm">
+                    <p>Our Office Hours:<br>
+                        Monday-Friday: 8:00 to 17:00 <br>
+                        Saturday: 10:00 to 15:00 <br>
+                        Sunday: Close <br>
+                    </p>
+
+                    <label for="name">Name<span class="error">*</span></label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="phone">Phone Number<span class="error">*</span></label>
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="e.g., 1234567890"
+                        required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                        placeholder="e.g., example@email.com">
+
+                    <label for="message">Message<span class="error">*</span></label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+
+                    <button type="button" onclick="validateForm()">Submit</button>
+                </form>
+            </section>
+
+        </div>
+        <footer class="page-footer">
+            <div class="videos">
+                <a href="https://youtu.be/_TOCRjF9WuE?si=DzksWg5hYlKL8pZr" target="_blank"><img src="images/thumb1.jpg"
+                        alt="The race for semiconductor supremacy | FT Film"></a>
+                <a href="https://youtu.be/NYAiuqU20iQ?si=DZzy56P3cel4j8Dz" target="_blank"><img src="images/thumb2.jpg"
+                        alt="Has China's Belt and Road Initiative been a success? | FT"></a>
+                <a href="https://youtu.be/94-xtirX0Lo?si=tOV6wL8cDJDL-Maw" target="_blank"><img src="images/thumb3.jpg"
+                        alt="The creator economy is changing, but can it thrive? | FT Tech"></a>
+                <a href="https://youtu.be/OhkFbgxQuXA?si=z3hCPhyh8HX4VILA" target="_blank"><img src="images/thumb4.jpg"
+                        alt="Greensill, Gupta and Cameron: what went wrong | FT Film"></a>
+                <a href="https://youtu.be/1i9nJ4cO2mM?si=69v9dhp4ggtQkSgU" target="_blank"><img src="images/thumb5.jpg"
+                        alt="Can the steel industry go green? | FT Climate Capital"></a>
+                <a href="https://youtu.be/95jabRNJ6Ng?si=G2YaiUovFGeLNwmN" target="_blank"><img src="images/thumb6.jpg"
+                        alt="The ESG investment backlash is beginning to have an impact | FT Moral Money"></a>
+                <a href="https://youtu.be/WCmO0fre9Fc?si=bOrGyFSGIqkX0IZz" target="_blank"><img src="images/thumb7.jpg"
+                        alt="Moon rush: the launch of a lunar economy | FT Film"></a>
+            </div>
+            <div class="footer-right">
+                1385 Woodroffe Ave <br>
+                Ottawa, ON K2G 1V8<br>
+                +1(613) 727-4723<br>
+                <a href="mailto:ac.currency.converter@gmail.com">ac.currency.converter@gmail.com</a>
+            </div>
+        </footer>
+
+        <script src="countries.js"></script>
+        <script src="script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+        <script src="index.js"></script>
+        <script src="aboutUs.js"></script>
+        <script src="map.js"></script>
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqQK3VPBIH6nGvxfigze0-GnpFI8PqjFA&callback=initMap"
+            async defer></script>
+    </body>
+
+</html>
