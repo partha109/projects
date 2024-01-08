@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Partha Sinha">
+        <meta name="email" content="sinh0018@alogonquinlive.com">
+        <title>Reviews</title>
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+    <h1> Welcome to Alberta</h1>
+
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="abTravelInfo.html">Home</a></li>
+                    <li><a href="places.html">Places to Visit</a></li>
+                    <li><a href="thingsToDo.html">Things to Do</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="container">
+            <h2>Visitor's Review for Alberta</h2>
+            <form action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="place">Place Visited:</label>
+                <input type="text" id="place" name="place" required>
+
+                <label for="natural-beauty">Natural Beauty Rating (1-5):</label>
+                <input type="number" id="natural-beauty" name="natural-beauty" min="1" max="5" required>
+
+                <label for="driving-parking">Driving & Parking Rating (1-5):</label>
+                <input type="number" id="driving-parking" name="driving-parking" min="1" max="5" required>
+
+                <label for="convenience-facilities">Convenience Facilities Rating (1-5):</label>
+                <input type="number" id="convenience-facilities" name="convenience-facilities" min="1" max="5" required>
+
+                <label for="cleanliness">Cleanliness Rating (1-5):</label>
+                <input type="number" id="cleanliness" name="cleanliness" min="1" max="5" required>
+
+                <label for="maintenance">Are facilities regularly monitored and maintained?</label>
+                <input type="radio" id="yes" name="maintenance" value="Yes" required>
+                <label for="yes">Yes</label>
+                <input type="radio" id="no" name="maintenance" value="No" required>
+                <label for="no">No</label>
+
+                <label for="comments">Comments:</label>
+                <textarea id="comments" name="comments" rows="6" required></textarea><br>
+                <p>
+                    <input type="submit" value="Submit Review">
+                </p>
+            </form>
+        </div>
+
+        <footer>
+            <div class="column">
+                <a href="contact.html#about-us">About Us</a><br>
+                <a href="#">Career</a><br>
+                <a href="#">Travel Resources</a><br>
+            </div>
+            <div class="column">
+                <a href="#">News Room</a><br>
+                <a href="abTravelInfo.html#plan-your-trip">Plan Your Trip</a><br>
+                <a href="#">Upcoming Events</a>
+            </div>
+            <address>
+                Contact Us<br>
+                123 Main St<br>
+                Edmonton, Alberta. T5A 0A1<br>
+                +1(780) 123-5678<br>
+                <a href="mailto:info@abtravel.com?subject=Inquiry about Alberta Travel Agency">
+                    info@abtravel.com</a>
+            </address>
+        </footer>
+
+    </body>
+
+</html>
