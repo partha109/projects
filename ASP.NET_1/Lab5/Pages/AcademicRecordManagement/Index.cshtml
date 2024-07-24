@@ -1,0 +1,51 @@
+﻿@page
+@model Lab5.Pages.AcademicRecordManagement.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create" asp-route-orderby="@Model.OrderBy">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-page="Index" asp-route-orderby="course">Course</a>
+            </th>
+            <th>
+                <a asp-page="Index" asp-route-orderby="name">Student</a>
+            </th>
+            <th>
+                <a asp-page="Index" asp-route-orderby="grade">Grade</a>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @* display the AllAcademicDetailsRecord list content *@
+        @foreach (var item in Model.AllAcademicDetailsRecord)
+        {
+            <tr>
+                <td>
+                    @item.courseCode - @item.courseTitle
+                </td>
+                <td>
+                    @item.Id - @item.name
+                </td>
+                <td>
+                    @item.grade
+                </td>
+                <td>
+                    @*use item.id and item.courseCode as query string to edit*@
+                    <a asp-page="./Edit" asp-route-studentId="@item.Id" asp-route-courseCode="@item.courseCode" asp-route-orderby="@Model.OrderBy">Edit</a> |
+                    @* use deleteId with item.id and deleteCode with item.courseCode as query string, set onclick to prompt up warning msg *@
+                    <a asp-page="./Index" asp-route-deleteId="@item.Id" asp-route-deleteCode="@item.courseCode" asp-route-orderby="@Model.OrderBy" onclick="return confirm('Please confirm to delete the following academic record:\n\n   Student:@item.name\n Course:@item.courseTitle\n\n');">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

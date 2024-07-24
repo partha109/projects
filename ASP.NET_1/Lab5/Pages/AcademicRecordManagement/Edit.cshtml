@@ -1,0 +1,48 @@
+﻿@page
+@model Lab5.Pages.AcademicRecordManagement.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Academicrecord</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <div>
+            Student:
+            <span class="fw-bold">@Model.Student.Id - @Model.Student.Name</span>
+        </div>
+        <div>
+            Course:
+            <span class="fw-bold">@Model.Course.Code - @Model.Course.Title</span>
+        </div>
+
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Academicrecord.CourseCode" />
+            <input type="hidden" asp-for="Academicrecord.StudentId" />
+            <div class="form-group">
+                <label asp-for="Academicrecord.Grade" class="control-label"></label>
+                <input asp-for="Academicrecord.Grade" class="form-control" />
+                <span asp-validation-for="Academicrecord.Grade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    @* including orderby as querystring *@
+    <a asp-page="./Index" asp-route-orderby="@Model.OrderBy">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
