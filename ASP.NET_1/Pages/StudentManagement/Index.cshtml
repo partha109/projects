@@ -1,0 +1,49 @@
+﻿@page
+@model Lab5.Pages.StudentManagement.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    string currentOrder = Model.OrderBy ?? "";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create" asp-route-orderby="@Model.OrderBy">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-page="Index" asp-route-orderby="@(currentOrder == "name" ? "name_desc" : "name")">Name</a>
+            </th>
+            <th>
+                <a asp-page="Index" asp-route-orderby="@(currentOrder == "course" ? "course_desc" : "course")">No. of Courses</a>
+            </th>
+            <th>
+                <a asp-page="Index" asp-route-orderby="@(currentOrder == "grade" ? "grade_desc" : "grade")">Avg. Grade</a>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.studentSummaries)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.studentName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.numberOfCourse)
+                </td>
+                <td>
+                    @item.average.ToString("F1")
+                </td>
+                <td>
+                    <a asp-page="Details" asp-route-id="@item.Id" asp-route-orderby="@Model.OrderBy">Details</a> |
+                    <a asp-page="Index" asp-route-delete="@item.Id" asp-route-orderby="@Model.OrderBy" onclick="return confirm('Please confirm to delete student:\n\n   @item.studentName\n\n   All his/her academic records will be deleted too!');">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

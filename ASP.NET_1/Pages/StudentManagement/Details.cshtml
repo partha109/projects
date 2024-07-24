@@ -1,0 +1,52 @@
+﻿@page
+@model Lab5.Pages.StudentManagement.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Student</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Student.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Student.Name)
+        </dd>
+    </dl>
+</div>
+<h2>Academic Records</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-page="Details" asp-route-id=@Model.Student.Id asp-route-orderby="course">Course</a>
+            </th>
+            <th>
+                <a asp-page="Details" asp-route-id=@Model.Student.Id asp-route-orderby="grade">Grade</a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+       
+        @foreach (var item in Model.Details)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.courseTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.grade)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    <a asp-page="./Index" asp-route-orderby=@Model.OrderBy>Back to List</a>
+</div>

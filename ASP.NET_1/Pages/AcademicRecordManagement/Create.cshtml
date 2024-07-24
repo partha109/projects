@@ -1,0 +1,55 @@
+﻿@page
+@model Lab5.Pages.AcademicRecordManagement.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Create a New Academic Record</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            @* Display error message *@
+            @if (!string.IsNullOrEmpty(Model.ErrorMsg))
+            {
+                <div class="alert alert-danger">
+                    @Model.ErrorMsg
+                </div>
+            }
+
+            <div class="form-group">
+                <label asp-for="Academicrecord.CourseCode" class="control-label"></label>
+                <select asp-for="Academicrecord.CourseCode" class="form-control" asp-items="Model.CourseList"></select>
+                <span asp-validation-for="Academicrecord.CourseCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Academicrecord.StudentId" class="control-label"></label>
+                <select asp-for="Academicrecord.StudentId" class="form-control" asp-items="Model.StudentList"></select>
+                <span asp-validation-for="Academicrecord.StudentId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Academicrecord.Grade" class="control-label"></label>
+                <input asp-for="Academicrecord.Grade" class="form-control" />
+                <span asp-validation-for="Academicrecord.Grade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index" asp-route-orderby="@Model.OrderBy">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
